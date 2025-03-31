@@ -4,7 +4,9 @@ const multer = require("multer");
 const { simpleParser } = require("mailparser");
 const fs = require("fs");
 const path = require("path");
-
+const dayjs = require("dayjs");
+const relativeTime = require("dayjs/plugin/relativeTime");
+dayjs.extend(relativeTime); // Extend dayjs with relativeTime plugin
 const app = express();
 const port = 3000;
 
@@ -33,7 +35,15 @@ app.post("/upload", upload.single("emlFile"), async (req, res) => {
     const parsed = await simpleParser(emlContent);
     fs.unlinkSync(filePath); // Delete uploaded file after parsing
 
-    res.render("parsed", { emailHtml: parsed.html || "No HTML content found" });
+    const sentTime = parsed.date
+      ? dayjs(parsed.date).fromNow(true)
+      : "1 minute";
+
+    console.log(sentTime);
+    res.render("parsed", {
+      emailHtml: parsed.html || "No HTML content found",
+      sentAgo: `${sentTime} ago`,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error processing the file.");

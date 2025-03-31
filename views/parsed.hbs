@@ -1,10 +1,99 @@
-<style>
-  @font-face {
-    font-family: Arial;
-  }
-</style>
-<div
-  style="
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HDA</title>
+    <style>
+      @font-face {
+        font-family: "Helvetica Neue";
+        src: url("HelveticaNeueRoman.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Helvetica Neue";
+        src: url("HelveticaNeueMedium.ttf") format("truetype");
+        font-weight: bold;
+        font-style: bold;
+      }
+
+      @font-face {
+        font-family: "Helvetica Neue";
+        src: url("HelveticaNeueMedium.ttf") format("truetype");
+        font-weight: strong;
+        font-style: strong;
+      }
+      body,
+      *,
+      a,
+      font {
+        font-family: "Helvetica Neue", Arial, sans-serif !important;
+        line-height: 1.4;
+        font-size: 13px !important;
+      }
+    </style>
+  </head>
+
+  <body style="font-family: Arial; padding: 16px">
+    <div style="display: flex; padding-bottom: 16px">
+      <!-- Left Flexbox (Square Logo) -->
+      <div
+        style="
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-right: 16px;
+        "
+      >
+        <img src="./dlsu_logo.png" style="width: 64px; height: 64px" />
+      </div>
+
+      <!-- Right Flexbox (3 Rows) -->
+      <div
+        style="display: flex; flex-direction: column; flex: 1; font-size: small"
+      >
+        <div
+          style="
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+          "
+        >
+          <b>Help Desk Announcement</b>
+        </div>
+        <div
+          style="
+          color: #666;
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+          "
+        >
+          to
+        </div>
+        <div
+          style="color: #666;
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+          "
+        >
+          {{{sentAgo}}}
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="
    color: #000 !important;
    font-family: Arial !important;"
->{{{emailHtml}}}</div>
+    >{{{emailHtml}}}</div>
+
+  </body>
+</html>
