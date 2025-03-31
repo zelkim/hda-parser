@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HDA</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body style="font-family: Arial">
+    <div style="display: flex; width: 400px; padding: 1em">
+      <!-- Left Flexbox (Square Logo) -->
+      <div
+        style="
+          width: 3.75em;
+          height: 3.75em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-right: 1em;
+        "
+      >
+        <img src="./dlsu_logo.png" style="width: 4em; height: 4em" />
+      </div>
+
+      <!-- Right Flexbox (3 Rows) -->
+      <div style="display: flex; flex-direction: column; flex: 1">
+        <div
+          style="
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+          "
+        >
+          <b>Help Desk Announcement</b>
+        </div>
+        <div
+          style="
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+          "
+        >
+          to
+        </div>
+        <div
+          style="
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+          "
+        >
+          1 minute ago
+        </div>
+      </div>
+    </div>
+
+    <!-- Container for dynamically loaded content -->
+    <div id="dynamic-content"></div>
+  </body>
+</html>
